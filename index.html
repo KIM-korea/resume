@@ -382,7 +382,7 @@
       <aside aria-label="기술 요약">
         <div class="aside-section">
           <h2>Profile</h2>
-          <p>김도현<br>Frontend · Full Stack · Backend Developer</p>
+          <p>김도현<br>Team Lead · Frontend · Full Stack · Backend Developer</p>
         </div>
 
         <div class="aside-section">
@@ -397,11 +397,11 @@
           </div>
           <div class="skill-group">
             <strong>Data &amp; Messaging</strong>
-            <ul class="tags"><li>MySQL</li><li>MariaDB</li><li>PostgreSQL</li><li>Kafka</li><li>Avro</li></ul>
+            <ul class="tags"><li>MySQL</li><li>MariaDB</li><li>PostgreSQL</li><li>GraphDB</li><li>Kafka</li><li>Avro</li></ul>
           </div>
           <div class="skill-group">
             <strong>AI &amp; Vision</strong>
-            <ul class="tags"><li>Python</li><li>FastAPI</li><li>YOLOv8</li><li>OpenCV</li></ul>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>YOLOv8</li><li>OpenCV</li><li>LLM</li><li>Vector Embedding</li></ul>
           </div>
           <div class="skill-group">
             <strong>Infra &amp; Tools</strong>
@@ -413,8 +413,8 @@
       <main id="content">
         <p class="eyebrow">Developer Resume</p>
         <h1>김도현</h1>
-        <p class="role">Frontend · Full Stack · Backend Developer</p>
-        <p class="summary">React와 TypeScript 기반의 사용자 화면부터 Spring Boot 기반의 주문·결제 백엔드까지 구현합니다. 사용자 흐름을 실제 API와 연결하고 상태 전이, 장애 보상, 비동기 이벤트를 테스트로 검증하는 데 강점이 있습니다. 요구사항과 제약을 문서화하고 사람의 검토 지점을 명확히 두는 AI 활용 개발 방식도 경험했습니다.</p>
+        <p class="role">Team Lead · Frontend · Full Stack · Backend Developer</p>
+        <p class="summary">7인 팀을 이끌며 금융 뉴스·공시를 GraphDB 관계로 구조화하는 AI 데이터 파이프라인을 설계하고 있습니다. React와 TypeScript 기반의 사용자 화면부터 Spring Boot 기반의 주문·결제 백엔드까지 구현하며, 상태 전이·장애 보상·비동기 이벤트와 LLM 추출 결과를 테스트와 사람 검토로 검증하는 데 강점이 있습니다.</p>
         <div class="actions" aria-label="이력서 작업">
           <button class="button" type="button" onclick="window.print()">PDF로 저장</button>
           <a class="button secondary" href="https://docs.google.com/document/d/1tUT0EyOuz60qJ6Z_MIcoxWX4o_fZ4ZUsUirOMuOvN1E/edit?usp=drivesdk">Google Docs 열기</a>
@@ -422,6 +422,20 @@
 
         <section aria-labelledby="projects-heading">
           <h2 class="section-title" id="projects-heading">프로젝트 경험</h2>
+
+          <article class="project">
+            <div class="project-header">
+              <h3>줍Zoop <span class="position">| 팀장 · 백엔드/AI 데이터 파이프라인 개발</span></h3>
+              <time datetime="2026-08">2026.08 – 진행 중</time>
+            </div>
+            <ul>
+              <li>7인 팀의 팀장으로 금융 뉴스·공시에서 추출한 이슈와 기업 관계를 GraphDB로 구조화하고, 사용자의 보유·관심 종목까지 이어지는 영향 경로를 시각화하는 금융 인텔리전스 서비스를 개발하고 있습니다.</li>
+              <li>뉴스 수집·정제 및 중복 제거 이후 기사별 사건을 구조화하고, 임베딩 유사도·엔티티·발행 시점으로 유사 사건을 군집화한 뒤 상위 이슈를 생성하는 파이프라인을 설계하고 PoC를 진행하고 있습니다.</li>
+              <li>LLM 추출 결과에 원문 근거 문장, 신뢰도와 검증 상태를 저장하고 규칙 기반 검사·격리된 검증 모델·사람 검수를 결합해 근거 없는 관계가 그래프에 반영되지 않도록 설계했습니다.</li>
+              <li>기업·종목·뉴스·이슈·제품·산업을 노드로 모델링하고 직접 언급, 제품·산업 매개, 공급망·경쟁 관계를 구분하는 GraphDB 스키마와 포트폴리오 중심 관계 그래프 프로토타입을 제작했습니다.</li>
+            </ul>
+            <p class="stack"><strong>기술</strong> GraphDB, LLM, Vector Embedding, News Crawling, REST API, AI Structured Output, Human-in-the-loop Validation</p>
+          </article>
 
           <article class="project">
             <div class="project-header">
