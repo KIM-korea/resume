@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="프론트엔드부터 주문·결제 백엔드까지 구현하는 개발자 김도현의 이력서입니다.">
+  <meta name="theme-color" content="#132238">
+  <meta property="og:title" content="김도현 | Developer Resume">
+  <meta property="og:description" content="Frontend · Full Stack · Backend Developer">
+  <meta property="og:type" content="profile">
+  <title>김도현 | Developer Resume</title>
+  <style>
+    :root {
+      --ink: #142033;
+      --muted: #627083;
+      --line: #dce3eb;
+      --paper: #ffffff;
+      --wash: #f4f7fa;
+      --accent: #f27c26;
+      --accent-soft: #fff1e7;
+      --navy: #132238;
+      --shadow: 0 24px 70px rgba(20, 32, 51, .12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(242, 124, 38, .10), transparent 30rem),
+        var(--wash);
+      font-family: Inter, Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+
+    a { color: inherit; }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: -5rem;
+      z-index: 10;
+      padding: .65rem 1rem;
+      color: #fff;
+      background: var(--navy);
+      border-radius: .5rem;
+    }
+
+    .skip-link:focus { top: 1rem; }
+
+    .page {
+      width: min(1120px, calc(100% - 40px));
+      margin: 40px auto;
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid rgba(20, 32, 51, .08);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 22px 34px;
+      color: #fff;
+      background: var(--navy);
+    }
+
+    .monogram {
+      display: inline-grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 16px;
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      text-decoration: none;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: .6rem 1.25rem;
+      font-size: .92rem;
+    }
+
+    .contact-links a {
+      color: rgba(255, 255, 255, .86);
+      text-decoration-color: rgba(255, 255, 255, .35);
+      text-underline-offset: 4px;
+    }
+
+    .contact-links a:hover { color: #fff; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+    }
+
+    aside {
+      padding: 44px 30px;
+      background: #f8fafc;
+      border-right: 1px solid var(--line);
+    }
+
+    main { padding: 54px 58px 64px; }
+
+    .eyebrow {
+      margin: 0 0 .55rem;
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2.3rem, 6vw, 4.6rem);
+      line-height: 1.02;
+      letter-spacing: -.065em;
+    }
+
+    .role {
+      margin: .8rem 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+      font-weight: 600;
+    }
+
+    .summary {
+      max-width: 46rem;
+      margin: 2rem 0 0;
+      font-size: 1.06rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1.8rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: .62rem 1rem;
+      border: 1px solid var(--navy);
+      border-radius: 999px;
+      color: #fff;
+      background: var(--navy);
+      font: inherit;
+      font-size: .9rem;
+      font-weight: 750;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button.secondary {
+      color: var(--navy);
+      background: transparent;
+    }
+
+    section { margin-top: 3.2rem; }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin: 0 0 1.5rem;
+      color: var(--navy);
+      font-size: 1.15rem;
+      letter-spacing: -.02em;
+    }
+
+    .section-title::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+    }
+
+    .project {
+      position: relative;
+      padding: 0 0 2.2rem 1.35rem;
+      border-left: 2px solid var(--line);
+      break-inside: avoid;
+    }
+
+    .project + .project { padding-top: .1rem; }
+
+    .project::before {
+      content: "";
+      position: absolute;
+      left: -6px;
+      top: .5rem;
+      width: 10px;
+      height: 10px;
+      background: var(--accent);
+      border: 3px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: .35rem;
+    }
+
+    .project h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.08rem;
+      letter-spacing: -.02em;
+    }
+
+    .project .position {
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    time {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: .88rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    ul {
+      margin: .65rem 0 .75rem;
+      padding-left: 1.2rem;
+    }
+
+    li { margin: .28rem 0; }
+    li::marker { color: var(--accent); }
+
+    .stack {
+      margin: .8rem 0 0;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .stack strong { color: var(--ink); }
+
+    .aside-section + .aside-section { margin-top: 2rem; }
+
+    .aside-section h2 {
+      margin: 0 0 .75rem;
+      color: var(--navy);
+      font-size: .83rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .aside-section p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.7;
+    }
+
+    .skill-group + .skill-group { margin-top: 1rem; }
+
+    .skill-group strong {
+      display: block;
+      margin-bottom: .28rem;
+      color: var(--ink);
+      font-size: .9rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tags li {
+      margin: 0;
+      padding: .2rem .5rem;
+      color: #47566a;
+      background: #eaf0f5;
+      border-radius: 6px;
+      font-size: .78rem;
+      line-height: 1.5;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .principles li {
+      margin: 0;
+      padding: 1rem;
+      background: var(--accent-soft);
+      border-radius: 14px;
+      font-size: .9rem;
+    }
+
+    footer {
+      padding: 18px 34px;
+      color: #fff;
+      background: var(--navy);
+      font-size: .82rem;
+      text-align: center;
+    }
+
+    @media (max-width: 820px) {
+      .page { width: min(100% - 20px, 720px); margin: 10px auto; border-radius: 18px; }
+      .topbar { padding: 18px 22px; }
+      .layout { grid-template-columns: 1fr; }
+      main { order: 1; padding: 42px 24px 48px; }
+      aside { order: 2; padding: 34px 24px; border-top: 1px solid var(--line); border-right: 0; }
+      .project-header { display: block; }
+      time { display: block; margin-top: .2rem; }
+      .principles { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 520px) {
+      body { font-size: 15px; }
+      .contact-links { display: grid; gap: .15rem; }
+      .contact-links a { overflow-wrap: anywhere; }
+      h1 { font-size: 2.45rem; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 13mm; }
+      body { background: #fff; font-size: 10.2pt; line-height: 1.48; }
+      .page { width: auto; margin: 0; border: 0; border-radius: 0; box-shadow: none; }
+      .topbar { padding: 12px 18px; }
+      .monogram { width: 38px; height: 38px; border-radius: 10px; }
+      .layout { grid-template-columns: 48mm minmax(0, 1fr); }
+      aside { padding: 24px 16px; }
+      main { padding: 28px 28px 32px; }
+      h1 { font-size: 28pt; }
+      .summary { margin-top: 1rem; }
+      section { margin-top: 1.6rem; }
+      .section-title { margin-bottom: .8rem; }
+      .project { padding-bottom: 1rem; }
+      .actions, footer { display: none; }
+      .principles { gap: .55rem; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#content">본문으로 이동</a>
+  <article class="page">
+    <header class="topbar">
+      <a class="monogram" href="#content" aria-label="김도현 이력서 맨 위로">KD</a>
+      <nav class="contact-links" aria-label="연락처">
+        <a href="mailto:dohyun3885@gmail.com">dohyun3885@gmail.com</a>
+        <a href="https://github.com/KIM-korea" rel="me">github.com/KIM-korea</a>
+      </nav>
+    </header>
+
+    <div class="layout">
+      <aside aria-label="기술 요약">
+        <div class="aside-section">
+          <h2>Profile</h2>
+          <p>김도현<br>Frontend · Full Stack · Backend Developer</p>
+        </div>
+
+        <div class="aside-section">
+          <h2>Skills</h2>
+          <div class="skill-group">
+            <strong>Frontend</strong>
+            <ul class="tags"><li>React</li><li>TypeScript</li><li>JavaScript</li><li>SCSS</li><li>Zustand</li><li>TanStack Query</li><li>FullCalendar</li></ul>
+          </div>
+          <div class="skill-group">
+            <strong>Backend</strong>
+            <ul class="tags"><li>Java</li><li>Spring Boot</li><li>Spring Data JPA</li><li>OpenFeign</li><li>JWT</li><li>REST API</li></ul>
+          </div>
+          <div class="skill-group">
+            <strong>Data &amp; Messaging</strong>
+            <ul class="tags"><li>MySQL</li><li>MariaDB</li><li>PostgreSQL</li><li>Kafka</li><li>Avro</li></ul>
+          </div>
+          <div class="skill-group">
+            <strong>AI &amp; Vision</strong>
+            <ul class="tags"><li>Python</li><li>FastAPI</li><li>YOLOv8</li><li>OpenCV</li></ul>
+          </div>
+          <div class="skill-group">
+            <strong>Infra &amp; Tools</strong>
+            <ul class="tags"><li>Docker Compose</li><li>GitHub Actions</li><li>Vercel</li><li>Git</li><li>Figma</li></ul>
+          </div>
+        </div>
+      </aside>
+
+      <main id="content">
+        <p class="eyebrow">Developer Resume</p>
+        <h1>김도현</h1>
+        <p class="role">Frontend · Full Stack · Backend Developer</p>
+        <p class="summary">React와 TypeScript 기반의 사용자 화면부터 Spring Boot 기반의 주문·결제 백엔드까지 구현합니다. 사용자 흐름을 실제 API와 연결하고 상태 전이, 장애 보상, 비동기 이벤트를 테스트로 검증하는 데 강점이 있습니다. 요구사항과 제약을 문서화하고 사람의 검토 지점을 명확히 두는 AI 활용 개발 방식도 경험했습니다.</p>
+        <div class="actions" aria-label="이력서 작업">
+          <button class="button" type="button" onclick="window.print()">PDF로 저장</button>
+          <a class="button secondary" href="https://docs.google.com/document/d/1tUT0EyOuz60qJ6Z_MIcoxWX4o_fZ4ZUsUirOMuOvN1E/edit?usp=drivesdk">Google Docs 열기</a>
+        </div>
+
+        <section aria-labelledby="projects-heading">
+          <h2 class="section-title" id="projects-heading">프로젝트 경험</h2>
+
+          <article class="project">
+            <div class="project-header">
+              <h3>Retail AI Shop · ZeroPick <span class="position">| 백엔드 개발</span></h3>
+              <time datetime="2026-07/2026-08">2026.07 – 2026.08</time>
+            </div>
+            <ul>
+              <li>저당·제로 식품 커머스의 commerce-service를 담당해 회원가입, 로그인, JWT 발급, 장바구니 CRUD, 주문·모의결제·취소 API를 구현했습니다.</li>
+              <li>주문 상태를 PENDING, PAID, CANCELLED로 관리하고 비관적 잠금으로 중복 결제를 방지했으며, 재고 차감 및 취소 실패에 보상 로직을 적용했습니다.</li>
+              <li>OpenFeign으로 상품·재고 서비스를 연동하고 결제 완료 시 품목별 Avro Kafka 이벤트를 발행했습니다.</li>
+              <li>정상 결제, 재고 부족, 부분 차감 복구, 중복 결제 차단, 취소 시 재고 복원과 실패 보상 경로를 통합 테스트로 검증했습니다.</li>
+            </ul>
+            <p class="stack"><strong>기술</strong> Java 17, Spring Boot, Spring Data JPA, OpenFeign, JWT, Kafka, Avro, MariaDB, H2, Docker Compose</p>
+          </article>
+
+          <article class="project">
+            <div class="project-header">
+              <h3>DiscPedia <span class="position">| 프론트엔드 개발</span></h3>
+              <time datetime="2026-03">2026.03 – 현재</time>
+            </div>
+            <ul>
+              <li>국내 LP·CD 컬렉터를 위한 발매 정보, 리뷰, 컬렉션 관리 웹앱의 React 기반 모바일 우선 프론트엔드를 개발하고 있습니다.</li>
+              <li>카카오·구글 소셜 로그인, 관심 아티스트 온보딩, 리뷰 정렬, 컬렉션 필터와 상세 수정·삭제를 구현했습니다.</li>
+              <li>마이페이지와 내 리뷰 조회·수정·삭제 흐름을 구축하고 인증 화면의 접근 제어와 API 연동 오류를 개선했습니다.</li>
+              <li>OAuth 요청의 인증 헤더, 권한 오류의 로그인 이동, 저화질 커버 이미지와 리뷰 수정 UX 문제를 분석하고 해결했습니다.</li>
+            </ul>
+            <p class="stack"><strong>기술</strong> React, JavaScript, REST API, OAuth, JWT, Responsive Web, Vercel</p>
+          </article>
+
+          <article class="project">
+            <div class="project-header">
+              <h3>SafeWatch · 노인 낙상 감지 시스템 <span class="position">| 풀스택 개발</span></h3>
+              <time datetime="2026-03/2026-07">2026.03 – 2026.07</time>
+            </div>
+            <ul>
+              <li>카메라 영상에서 낙상을 감지하고 보호자에게 실시간 알림과 이력을 제공하는 시스템의 기획, 프론트엔드, 백엔드 구현에 참여했습니다.</li>
+              <li>낙상 후 15초 무동작을 기준으로 위험도를 높이는 2단계 경고, Socket.io 알림, 3일 보존 정책과 Google OAuth 접근 제어를 설계했습니다.</li>
+              <li>React·TypeScript 화면, Node.js·Express·Prisma·PostgreSQL API, FastAPI·YOLOv8 AI Worker와 MediaMTX 영상 흐름을 연결했습니다.</li>
+              <li>SDLC 단계별 Skill·Rule과 사람 승인 게이트로 AI의 범위 확장과 맥락 이탈을 통제했습니다.</li>
+              <li>GPU가 없는 환경의 추론·인코딩 병목을 확인하고 스켈레톤 클립을 MVP에서 제외하는 범위 조정을 수행했습니다.</li>
+            </ul>
+            <p class="stack"><strong>기술</strong> React, TypeScript, Node.js, Express, Prisma, PostgreSQL, Socket.io, Python, FastAPI, YOLOv8, OpenCV, Docker Compose</p>
+          </article>
+
+          <article class="project">
+            <div class="project-header">
+              <h3>Meetcha <span class="position">| 프론트엔드 개발</span></h3>
+              <time datetime="2025-08/2025-12">2025.08 – 2025.12</time>
+            </div>
+            <ul>
+              <li>여러 참여자의 가능한 시간을 모아 미팅 일정을 확정하고 회고까지 관리하는 웹 서비스의 프론트엔드를 개발했습니다.</li>
+              <li>구글 로그인과 API 연동, 구글 캘린더 일정 표시, 참가 가능 시간 선택·생성·수정, 미팅 목록·상세·상태별 화면을 구현했습니다.</li>
+              <li>마이페이지와 미팅 회고 작성·조회 흐름을 구현하고 API 훅·타입·날짜 변환 유틸을 분리했습니다.</li>
+              <li>FullCalendar 타임테이블의 중복 선택, 기존 일정 표시, 모바일 드래그·터치 충돌과 반응형 레이아웃 문제를 개선했습니다.</li>
+            </ul>
+            <p class="stack"><strong>기술</strong> React, TypeScript, SCSS, Zustand, TanStack Query, FullCalendar, Framer Motion, Vite, Vercel, GitHub Actions</p>
+          </article>
+        </section>
+
+        <section aria-labelledby="approach-heading">
+          <h2 class="section-title" id="approach-heading">개발 방식</h2>
+          <ul class="principles">
+            <li>핵심 요구사항과 실패 경로를 먼저 정의하고 API 계약과 테스트로 결과를 확인합니다.</li>
+            <li>로딩·오류·빈 상태와 모바일 상호작용을 함께 점검해 실제 사용 흐름을 완성합니다.</li>
+            <li>AI에 필요한 맥락과 변경 범위를 제한하고 단계별 검토와 승인으로 결과를 검증합니다.</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <footer>© 2026 김도현 · Built as a static, accessible resume</footer>
+  </article>
+</body>
+</html>
